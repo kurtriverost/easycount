@@ -11,6 +11,10 @@ import androidx.annotation.NonNull;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -27,6 +31,7 @@ public class SplashActivity extends AppCompatActivity {
     private static boolean deniedPermission = false;
     private static String[] notGrantedPermissions;
     private static String[] necessaryPermissions;
+    private ImageView splashImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         }else{
             setupTimerTask();
+            setSplashAnimation();
         }
 
     }
@@ -138,5 +144,38 @@ public class SplashActivity extends AppCompatActivity {
                 })
                 .create()
                 .show();
+    }
+
+    private void setSplashAnimation(){
+        splashImage = findViewById(R.id.splash_image);
+
+        AlphaAnimation fadeIn = new AlphaAnimation(0.0f, 1.0f);
+        fadeIn.setDuration(1000);
+        fadeIn.setStartOffset(0);
+        fadeIn.setFillAfter(true);
+
+        AlphaAnimation fadeOut = new AlphaAnimation(1.0f, 0.0f);
+        fadeOut.setDuration(1000);
+        fadeOut.setStartOffset(1000);
+        fadeOut.setFillAfter(true);
+
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                splashImage.startAnimation(fadeOut);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        splashImage.startAnimation(fadeIn);
     }
 }

@@ -83,7 +83,7 @@ public class SplashActivity extends AppCompatActivity {
         if (isLoggedIn)
             goToHomeActivity();
         else
-            goToLoginActivity();
+            goToProfileSelectorActivity();
     }
 
     @Override
@@ -126,9 +126,10 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
-    private void goToLoginActivity(){
-        Intent login = new Intent().setClass(SplashActivity.this, LoginActivity.class );
+    private void goToProfileSelectorActivity(){
+        Intent login = new Intent().setClass(SplashActivity.this, ProfileSelectorActivity.class );
         startActivity(login);
+        overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
         finish();
     }
 

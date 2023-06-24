@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryBlue">#143257</color>
     <color name="darkBlue">#1D2B3D</color>
+    <color name="lightBlue1">#7FB2F0</color>
+    <color name="lightBlue2">#5F9BE4</color>
 
 </resources>

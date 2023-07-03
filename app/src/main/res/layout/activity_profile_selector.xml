@@ -39,11 +39,60 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/spartan_bold"
             android:text="choose your profile:"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <Button
+                android:id="@+id/first_profile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Vacío"
+                app:layout_constraintBottom_toTopOf="@+id/second_profile_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/second_profile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Vacío"
+                app:layout_constraintBottom_toTopOf="@+id/third_profile_btn"
+                app:layout_constraintEnd_toEndOf="@+id/first_profile_btn"
+                app:layout_constraintStart_toStartOf="@+id/first_profile_btn" />
+
+            <Button
+                android:id="@+id/third_profile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Vacío"
+                app:layout_constraintBottom_toTopOf="@+id/fourth_profile_btn"
+                app:layout_constraintEnd_toEndOf="@+id/second_profile_btn"
+                app:layout_constraintStart_toStartOf="@+id/second_profile_btn" />
+
+            <Button
+                android:id="@+id/fourth_profile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Vacío"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/third_profile_btn"
+                app:layout_constraintStart_toStartOf="@+id/third_profile_btn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

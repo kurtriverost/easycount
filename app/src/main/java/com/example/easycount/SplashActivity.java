@@ -121,7 +121,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void goToHomeActivity(){
         Intent homeIntent = new Intent();
-        homeIntent.setClass(SplashActivity.this, MainActivity.class );
+        homeIntent.setClass(SplashActivity.this, CounterListActivity.class );
         startActivity(homeIntent);
         finish();
     }

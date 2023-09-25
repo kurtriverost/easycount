@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="backgroundCounter">#C9E2FF</color>
+    <color name="backgroundTitleLabel">#7FB2F0</color>
+    <color name="backgroundCounterButton">#1C448E</color>
 </resources>

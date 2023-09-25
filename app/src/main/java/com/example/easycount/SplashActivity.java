@@ -80,10 +80,11 @@ public class SplashActivity extends AppCompatActivity {
 
     private void goToHomeOrAuth() {
         boolean isLoggedIn = UserPreferenceUtility.isLoggedIn(this);
-        if (isLoggedIn)
+        goToHomeActivity();
+/*        if (isLoggedIn)
             goToHomeActivity();
         else
-            goToLoginActivity();
+            goToLoginActivity();*/
     }
 
     @Override

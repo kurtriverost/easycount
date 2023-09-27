@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_button"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/rounded_corners_button_counter"
@@ -44,7 +45,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/subs_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_corners_button_counter"
@@ -68,7 +69,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/delete_counter_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/rounded_corners_secondary_button_counter"
@@ -91,14 +92,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/restart_counter_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/rounded_corners_secondary_button_counter"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_counter_button"
+            app:layout_constraintEnd_toStartOf="@+id/delete_counter_button"
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+            app:layout_constraintTop_toTopOf="@+id/delete_counter_button">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -112,14 +114,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/variation_counter_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/rounded_corners_secondary_button_counter"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_counter_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.10"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+            app:layout_constraintStart_toEndOf="@+id/delete_counter_button"
+            app:layout_constraintTop_toTopOf="@+id/delete_counter_button">
 
             <TextView
                 android:id="@+id/textView3"
@@ -135,7 +138,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/title_counter_textview"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:background="@drawable/rounded_corners_counter_title"
@@ -151,7 +154,7 @@
             app:layout_constraintVertical_bias="0.05" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/result_counter_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1200"

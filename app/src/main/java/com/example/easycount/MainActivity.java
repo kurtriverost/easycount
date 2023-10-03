@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners(){
 
+
+        //
+
         subsButton.setOnClickListener(view -> {
             result = result - variation;
             counterResultTextView.setText(String.valueOf(result));

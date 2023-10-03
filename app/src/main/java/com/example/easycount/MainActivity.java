@@ -3,8 +3,10 @@ package com.example.easycount;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -12,6 +14,9 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView countersListView;
+
+    //
     TextView counterTitleTextView;
     TextView counterResultTextView;
     ConstraintLayout subsButton;
@@ -35,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViewElements(){
+        countersListView = findViewById(R.id.counters_listview);
+
+        //
         counterTitleTextView = findViewById(R.id.title_counter_textview);
         counterResultTextView = findViewById(R.id.result_counter_textview);
         subsButton = findViewById(R.id.subs_button);
@@ -53,47 +61,9 @@ public class MainActivity extends AppCompatActivity {
             counterResultTextView.setText(String.valueOf(result));
         });
 
-        subsButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    fixedTimer.scheduleAtFixedRate(new TimerTask() {
-                        @Override
-                        public void run() {
-                            result = result - variation;
-                        }
-                    }, 1,1);
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP){
-                    //cancel timer
-                    fixedTimer.cancel();
-                }
-                return false;
-            }
-        });
-
         addButton.setOnClickListener(view -> {
             result = result + variation;
             counterResultTextView.setText(String.valueOf(result));
-        });
-
-        addButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    fixedTimer.scheduleAtFixedRate(new TimerTask() {
-                        @Override
-                        public void run() {
-                            result = result + variation;
-                        }
-                    }, 1,1);
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP){
-                    //cancel timer
-                    fixedTimer.cancel();
-                }
-                return false;
-            }
         });
 
         restartCounterButton.setOnClickListener(view -> {
@@ -102,8 +72,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void initTimer() {
-        fixedTimer = new Timer();
-
-    }
 }

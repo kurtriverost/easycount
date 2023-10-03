@@ -15,6 +15,8 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     ListView countersListView;
+    ConstraintLayout clearListButton;
+    ConstraintLayout addNewCounterButton;
 
     //
     TextView counterTitleTextView;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setViewElements(){
         countersListView = findViewById(R.id.counters_listview);
+        clearListButton = findViewById(R.id.clear_list_button);
+        addNewCounterButton = findViewById(R.id.new_counter_button);
 
         //
         counterTitleTextView = findViewById(R.id.title_counter_textview);
@@ -56,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners(){
 
+        clearListButton.setOnClickListener(view -> {
+
+        });
+
+        addNewCounterButton.setOnClickListener(view -> {
+
+        });
 
         //
 
